@@ -52,17 +52,23 @@ this.el[Format.getCamelCase(element.id)] = element;
 
         initEvents(); {
 
-            this.el.myPhoto.on("click", e=>{
+                this.el.myPhoto.on("click", e=>{
 
+                this.closeAllLetf();    
+                this.el.panelAddContact.show();
                 this.el.panelEditProfile.addClass('open');
-
 
             });
         
 
-            this.el.btnNewContact.on("click", e=>{
+                this.el.btnNewContact.on("click", e=>{
 
+                this.closeAllLeftPanel();    
+                this.el.panelAddContact.show();
+                setTimeout(()=>{  
                 this.el.panelAddContact.addClass('open');
+
+                }, 300);
             });
 
             this.el.btnClosePanelEditProfile.on("click", e=>{
@@ -70,6 +76,17 @@ this.el[Format.getCamelCase(element.id)] = element;
                 this.el.panelEditProfile.removeClass('open');
                 
             });
+
+            this.el.btnClosePanelAddContact.on("click" , e=>{
+                this.el.panelEditProfile.removeClass('open');
+            });
+
+      }
+
+      closeAllLeftPanel();{
+
+        this.el.panelAddContact.hide();
+        this.el.panelEditContact.hide();
 
       }
     }
