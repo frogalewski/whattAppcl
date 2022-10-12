@@ -81,6 +81,20 @@ this.el[Format.getCamelCase(element.id)] = element;
                 this.el.panelEditProfile.removeClass('open');
             });
 
+            this.el.photoContainerEditProfile.on('click', e=>{
+
+                this.el.imputProfilePhoto.click();
+            });
+
+            this.el.imputNamePanelEditProfile.on('keypress', e=>{
+
+                if (e.key === 'Enter'){
+
+                    e.preventDefautl();
+                }
+
+            });
+
       }
 
       closeAllLeftPanel();{
