@@ -4,7 +4,7 @@ class WhatsAppController {
 
         console.log('WhatsAppController OK');
 
-        this.ElementsPrototype();
+        this.elementsPrototype();
         this.loadElements();
         this.InitEvent();
     }
@@ -50,6 +50,22 @@ this.el[Format.getCamelCase(element.id)] = element;
 
         }
 
+        Element.prototype.removeClass = function (name) {
+               this.classList.remove(name);
+               return this;
+
+        }
+
+        Element.prototype.toggleClass = function (name) {
+            this.classList.toggle(name);
+            return this;
+        }
+       
+        Element.prototype.hasClass = function (name) {
+          return this.classList.constains(name);
+                    }
+
+
         initEvents(); {
 
                 this.el.myPhoto.on("click", e=>{
@@ -91,7 +107,14 @@ this.el[Format.getCamelCase(element.id)] = element;
                 if (e.key === 'Enter'){
 
                     e.preventDefautl();
+                    this.el.btnSavePanelEditProfile.click();
                 }
+
+            });
+
+            this.el.btnSavePanelEditProfile.on('click', el=>{
+
+                console.log(this.el.btnSavePanelEditProfile.innerHTML);
 
             });
 
