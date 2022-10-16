@@ -65,6 +65,27 @@ this.el[Format.getCamelCase(element.id)] = element;
           return this.classList.constains(name);
                     }
 
+                    HTMLFormElement.prototype.getform = function() {
+
+                        return new FormData(this);
+                    }
+                    
+                    HTMLFormElement.prototype.toJSON = function() {
+
+                        let json= {};
+
+                        this.getform().forEach((valeu, key)=>{
+
+                            json[key]= value;
+                        });
+
+                        renturn json;
+                    }
+
+                  }
+
+
+
 
         initEvents(); {
 
