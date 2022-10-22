@@ -79,7 +79,7 @@ this.el[Format.getCamelCase(element.id)] = element;
                             json[key]= value;
                         });
 
-                        renturn json;
+                        return json;
                     }
 
                   }
@@ -87,7 +87,7 @@ this.el[Format.getCamelCase(element.id)] = element;
 
 
 
-        initEvents(); {
+        initEvents() {
 
                 this.el.myPhoto.on("click", e=>{
 
@@ -138,6 +138,55 @@ this.el[Format.getCamelCase(element.id)] = element;
                 console.log(this.el.btnSavePanelEditProfile.innerHTML);
 
             });
+
+            this.el.contactsMessagenstList.querySelectorAll('contact-item').forEach(item=>{
+
+             item.on('click', e=>{  
+                this.el.home.hide();
+                this.el.mais.css({
+                   display:"flex"     
+
+                });
+                
+                
+                      });
+
+            this.el.btnAttach.on('click',e=>{
+
+               this.el.menuAttach.addClass('open');
+               document.addEventListener('click', this.closeMenuAttach); 
+            });
+
+            this.el.btnAttachPhoto.on('click',e=>{
+
+                this.el.menuAttach.addClass('open');
+ 
+             });
+             this.el.btnAttachCamera.on('click',e=>{
+
+                this.el.menuAttach.addClass('open');
+ 
+             });
+             this.el.btnAttachDocument.on('click',e=>{
+
+                this.el.menuAttach.addClass('open');
+ 
+             });
+             this.el.btnAttachContact.on('click',e=>{
+
+                this.el.menuAttach.addClass('open');
+ 
+             });
+
+
+
+      }
+
+      closeMenuAttach('e');{
+
+
+
+
 
       }
 
